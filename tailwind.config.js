@@ -22,7 +22,7 @@ module.exports = {
         'section-3-bg': 'url("../images/section-three-bg.png")',
         'section-four-box1': 'url("../images/section-four-box1.png")',
         'section-four-box2':'url("../images/section-four-box2.png")',
-        'section-four-box3':'url("../images/section-four-box3.png")'
+        'section-four-box3':'url("../images/section-four-box3.png")',
       }
     },
   },

@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const appDirectory = path.resolve(__dirname);
 const { presets, plugins } = require(`${appDirectory}/babel.config.js`);
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const compileNodeModules = [
   // Add every react-native package that needs compiling
   //'react-native-gesture-handler',
@@ -93,6 +94,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(true),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/assets/images', to: 'assets/images' }, // Copy images to 'assets/images' in the output folder
+      ],
     }),
   ],
   performance: {

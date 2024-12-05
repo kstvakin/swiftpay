@@ -1,10 +1,7 @@
 import React from 'react';
 import {
-  Image,
-  ImageBackground,
   StyleSheet,
-  Text,
-  View,
+  Image
 } from 'react-native';
 import Box from '../../components/Box';
 import { useLandingPageContext } from '../../context/LandingPageContext';
