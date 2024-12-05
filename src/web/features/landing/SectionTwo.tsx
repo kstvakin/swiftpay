@@ -17,7 +17,7 @@ const styleSheet: StyleSheet = {
     'iconStyle': 'w-full h-auto',
     'headerText': 'text-white text-center font-[Lexend-ExtraBold]',
     'iconSize': 'px-2 mb-5 md:m-0',
-    'starIcon': 'inline-block relative w-[1.8rem] h-[1.5rem] bg-[#8DECB4] star',
+    'starIcon': 'inline-block relative w-[3rem] h-[3rem] bg-[#8DECB4] star',
 }
 
 const SectionTwo = (): React.JSX.Element => {

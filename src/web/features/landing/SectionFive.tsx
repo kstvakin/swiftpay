@@ -71,19 +71,20 @@ const MobileScreen: React.FC<ScreenProps> = ({ items }) => {
         dots: true, // Enable navigation dots
         infinite: true, // Loop carousel
         speed: 500, // Animation speed in ms
-        slidesToShow: 1, // Number of slides to show
+        slidesToShow: 2, // Number of slides to show
         slidesToScroll: 1, // Number of slides to scroll
+        arrows: false,
         responsive: [
+            {
+                breakpoint: 468, // Below 768px
+                settings: {
+                    slidesToShow: 1, // Show 1 slide
+                },
+            },
             {
                 breakpoint: 1024, // Below 1024px
                 settings: {
                     slidesToShow: 2, // Show 2 slides
-                },
-            },
-            {
-                breakpoint: 768, // Below 768px
-                settings: {
-                    slidesToShow: 3, // Show 1 slide
                 },
             },
         ],
