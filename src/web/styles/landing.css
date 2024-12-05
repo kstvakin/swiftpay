@@ -1,0 +1,127 @@
+.transalateSectionOne {
+    translate: 0 20px;
+}
+
+/* Star shape using CSS */
+.star {
+    clip-path: polygon(
+      50% 0%, 
+      61% 35%, 
+      98% 35%, 
+      68% 57%, 
+      79% 91%, 
+      50% 70%, 
+      21% 91%, 
+      32% 57%, 
+      2% 35%, 
+      39% 35%
+    );
+  }
+
+  .tracking-wider{
+    letter-spacing: 0.05em;
+  }
+
+  .tracking-widest{
+    letter-spacing: 0.1em;
+  }
+
+  .section-three-gradient{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+  }
+
+  .inline-block{
+    display: inline-block !important;
+  }
+
+  .inline{
+    display: inline !important;
+  }
+  .transform-vertical-45p{
+    transform: translateY(45%);
+  }
+  .section-five-gradient{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(198, 245, 217, 0.3), rgba(141, 236, 180, 1));
+  }
+
+  .float-left{
+    float: left !important;
+  }
+  
+  .float-right{
+    float: right !important;
+  }
+
+  /* Container for the menu icon */
+.menu-icon {
+  width: 20px; /* Width of the menu icon */
+  height: 15px; /* Height of the menu icon */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Styling the individual lines */
+.menu-icon span {
+  width: 100%; /* Match the container width */
+  height: 4px; /* Thickness of the line */
+  background-color: #ccc; /* Line color */
+  border-radius: 2px; /* Rounded edges */
+  transition: all 0.3s ease; /* Smooth transitions for animations */
+}
+
+/* Example for an active state */
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+.star-icon {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin: 5px;
+  margin-left: 0;
+  border-right: 5px solid transparent; /* Halved the size */
+  border-bottom: 3.5px solid #B0B2BE; /* Halved the size */
+  border-left: 5px solid transparent; /* Halved the size */
+  transform: rotate(35deg);
+}
+
+.star-icon-black {
+  border-bottom: 3.5px solid #000000;
+}
+
+.star-icon:before,
+.star-icon:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent; /* Halved the size */
+  border-bottom: 3.5px solid #B0B2BE; /* Halved the size */
+  border-left: 5px solid transparent; /* Halved the size */
+  transform: rotate(-70deg);
+}
+
+.star-icon-black:before,
+.star-icon-black:after {
+  border-bottom: 3.5px solid #000000; /* Halved the size */
+}
+
+.star-icon:after {
+  transform: rotate(70deg);
+}
+

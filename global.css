@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Lexend-Regular';
+    src: url('./public/assets/fonts/Lexend-Regular.woff') format('woff'),
+         url('./public/assets/fonts/Lexend-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Lexend-ExtraBold';
+    src: url('./public/assets/fonts/Lexend-ExtraBold.woff') format('woff'),
+         url('./public/assets/fonts/Lexend-extraBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'Lexend-Regular', sans-serif !important;
+  }
+
+  .bold-font{
+    font-family: 'Lexend-ExtraBold'!important; 
+  }

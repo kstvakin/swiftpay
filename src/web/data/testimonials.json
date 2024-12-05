@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "name": "Magret Philip",
+            "title": "Executive Manager",
+            "testimony": "My transaction was very swift just like the name implies",
+            "rating": 3,
+            "totalrating":5,
+            "image":"../../assets/images/avatar.png"
+        },
+        {
+            "name": "Magret Philip",
+            "title": "Executive Manager",
+            "testimony": "My transaction was very swift just like the name implies",
+            "rating": 4,
+            "totalrating":5,
+            "image":"../../assets/images/avatar.png"
+        },
+        {
+            "name": "Magret Philip",
+            "title": "Executive Manager",
+            "testimony": "The website was user friendly and easy for me to navigate, so i had a seamless experience",
+            "rating": 3,
+            "totalrating":5,
+            "image":"../../assets/images/avatar.png"
+        },
+        {
+            "name": "Magret Philip",
+            "title": "Executive Manager",
+            "testimony": "My first contact with the landing page drew my attention and i experience no glitch during my transaction",
+            "rating": 5,
+            "totalrating":5,
+            "image":"../../assets/images/avatar.png"
+        },
+        {
+            "name": "Magret Philip",
+            "title": "Executive Manager",
+            "testimony": "My transaction was very swift just like the name implies",
+            "rating": 3,
+            "totalrating":5,
+            "image":"../../assets/images/avatar.png"
+        }
+    ]
+}
