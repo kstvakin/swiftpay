@@ -25,7 +25,7 @@ interface ProviderProps {
 // Create a provider component
 export const LandingPageProvider: React.FC<ProviderProps> = ({ children }) => {
   const marginX: string = "mx-8";
-  const h1Size: string = 'text-[1.5rem]';
+  const h1Size: string = 'text-[24px] md:text-[48px]';
   const smallFontSize: string = 'text-[0.55rem]/[0.10rem]';
   const headingStyle = tw(`${h1Size}`, 'text-[rgba(20, 30, 70, 1)]', 'font-extrabold');
 

@@ -8,18 +8,11 @@ interface BoxProps {
 }
 
 interface StyleSheet {
-    [key: string]: Style | Record<string, string>
+    [key: string]: string
 }
 
 const styleSheet: StyleSheet = {
-    'accordionContent': tw(
-        'p-[10px]',
-        'border-b-[1px]',
-        'border-[#555555]',
-        'rounded-[4px]',
-        'color-[#333333]',
-        'text-[0.75rem]'
-    )
+    'accordionContent': 'p-[10px] border-b-[1px] border-[#555555] rounded-[4px] color-[#333333] text-[12px]'
 };
 
 const Accordion: FC<BoxProps> = ({ items }) => {
@@ -54,8 +47,7 @@ const Accordion: FC<BoxProps> = ({ items }) => {
                     </Box>
                     {activeIndex === index && (
                         <div
-                            className="accordion-content"
-                            style={styleSheet.accordionContent}
+                            className={`${styleSheet.accordionContent} accordion-content`}
                         >
                             {item.content}
                         </div>

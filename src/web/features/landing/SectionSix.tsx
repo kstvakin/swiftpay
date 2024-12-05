@@ -33,7 +33,18 @@ const SectionSix = (): React.JSX.Element => {
             title: "Is Swiftpaay a bank?",
             content: "No, SwiftPaay is not a bank. It is a financial technology platform that facilitates international money transfers. While it provides services like transferring funds to bank accounts and mobile wallets, it does not function as a traditional bank offering savings accounts, loans, or other banking services."
         },
-        { title: "Why should I use Swiftpaay?", content: "Content for section 2" }
+        {
+            title: "Why should I use Swiftpaay?",
+            content: "Content for section 2"
+        },
+        {
+            title: "Why should I use Swiftpaay?",
+            content: "Content for section 2"
+        },
+        {
+            title: "Why should I use Swiftpaay?",
+            content: "Content for section 2"
+        }
     ];
     return (
         <Section parentClassName={styleSheet.sectionBackground}
@@ -53,7 +64,7 @@ const SectionSix = (): React.JSX.Element => {
                     <Box className={styleSheet.boxContainer}>
                         <Box className='p-[1.5rem] pt-[2.5rem]'>
                             <Box>
-                                <TextComponent className={`${h1Size} font-[Lexend-ExtraBold]`}>Frequently Asked Questions</TextComponent>
+                                <TextComponent className={`text-[18px] md:text-[36px] font-semibold`}>Frequently Asked Questions</TextComponent>
                             </Box>
                             <Box className='mt-[1.75rem]'>
                                 <Accordion items={accordionItems} />

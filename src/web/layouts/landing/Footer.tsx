@@ -20,8 +20,8 @@ interface StyleSheet {
 const styleSheet: StyleSheet = {
   'sectionWrapper': 'bg-[#141E46] text-xs sm:p-0 px-3',
   'container': 'w-full md:w-[70%] m-auto md:pt-12 pt-2 pb-5',
-  'listStyle': 'p-2 pl-0',
-  'headingStyle': 'font-["Lexend-ExtraBold"] pb-3',
+  'listStyle': 'p-2 pl-0 text-[8px] md:text-[16px]',
+  'headingStyle': 'font-["Lexend-ExtraBold"] pb-3 text-[10px] md:text-[20px]',
   'linksSection': 'flex md:w-1/2 w-full  md:p-0 pt-5',
   'gridStyle': 'w-[50%] px-2',
   'logoWrapper': 'w-[35%] md:w-[65%] bg-white flex justify-center max-h-[50%]',
@@ -95,7 +95,7 @@ const Footer = (): React.JSX.Element => {
           </div>
         </Box>
         <Box className={styleSheet.copyrightSection}>
-          <div className='text-white'>copyright &copy; swiftpaay, {currentYear} </div>
+          <div className='text-white text-[8px] md:text-[16px]'>copyright &copy; swiftpaay, {currentYear} </div>
         </Box>
       </Box>
 

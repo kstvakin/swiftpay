@@ -12,11 +12,11 @@ const styleSheet: StyleSheet = {
   'sectionWrapper': 'bg-white relative',
   'links': 'float-left p-3',
   'linksNoPadding': 'float-left px-3',
-  'roundedLinks': 'px-[1.15rem] py-2 color-white rounded-full',
+  'roundedLinks': 'px-[51px] py-[18px] color-white rounded-full text-[18px] font-semibold',
   'logoContainer': 'md:w-[20%] lg:w-[30%]',
   'container': 'mx-8 pt-5',
-  'linksContainer': 'md:w-[80%] lg:w-[70%] hidden sm:flex items-center text-[12px]',
-  'ulWrapper': 'sm:w-[55%] lg:w-[65%]',
+  'linksContainer': 'md:w-[80%] lg:w-[70%] hidden sm:flex items-center text-[16px]',
+  'ulWrapper': 'w-[45%]',
   'mobileMenuWrapper': 'bg-white absolute top-0 right-0 min-w-[45%] h-[100vh] z-10',
   'mobileMenuContainer': 'inline-block w-full mt-5',
   'mobileMenuLinks': 'pl-5 py-3 inline-block w-full color-[#141E46]'
@@ -74,8 +74,8 @@ const Header = (): React.JSX.Element => {
                 <li className={styleSheet.links}><a href='#'>Contact Us</a></li>
               </ul>
             </div>
-            <div>
-              <ul className='inline-block'>
+            <div className='w-[55%]'>
+              <ul className='inline-block float-right'>
                 <li className={styleSheet.linksNoPadding}>
                   <a className={`${styleSheet.roundedLinks} bg-[#141E46]`} href='#'>Log In</a>
                 </li>

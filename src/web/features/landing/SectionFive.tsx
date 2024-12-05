@@ -19,8 +19,9 @@ const styleSheet: StyleSheet = {
     'testimonyBox': 'float-left w-[20%] p-3',
     'testimonialWrapper': 'w-full md:w-[85%] m-auto',
     'testimonialBg': 'p-1 pb-10 px-3 bg-gradient-to-b from-testimonial-gradient-1 to-testimonial-gradient-2',
-    "smallFont": 'text-[0.65rem]',
-    "storyFont": 'text-[0.75rem]',
+    "smallFont": 'text-[5px] md:text-[10px]',
+    "storyFont": 'text-[7.5px] md:text-[15px]',
+    "bigFont": 'text-[8px] md:text-[16px]',
     'listBlock': 'hidden lg:inline-block w-full',
     'oddClass': 'translate-y-12',
     'avatarAndName': 'flex flex-col justify-center',
@@ -45,7 +46,7 @@ const LargeScreen: React.FC<ScreenProps> = ({ items }) => {
                             </div>
                             <div className={styleSheet.avatarAndName}>
 
-                                <div>{item.name}</div>
+                                <div className={styleSheet.bigFont}>{item.name}</div>
                                 <div className={styleSheet.smallFont}>{item.title}</div>
 
                             </div>
@@ -102,7 +103,7 @@ const MobileScreen: React.FC<ScreenProps> = ({ items }) => {
                                 </div>
                                 <div className='flex flex-col justify-center'>
 
-                                    <div>{item.name}</div>
+                                    <div className={styleSheet.bigFont}>{item.name}</div>
                                     <div className={styleSheet.smallFont}>{item.title}</div>
 
                                 </div>

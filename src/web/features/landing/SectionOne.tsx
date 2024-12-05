@@ -13,13 +13,13 @@ interface StyleSheet {
 }
 
 const styleSheet: StyleSheet = {
-  'sectionStyle': 'bg-[#8DECB4] rounded-t flex items-center justify-center flex-col md:px-0 px-2 mx-4 md:mx-8',
-  'header': 'md:text-[2.5rem] text-[2rem] text-[#141E46] font-[Lexend-ExtraBold]',
-  'subHeaderTextSize': 'text-center text-[1.25rem] text-[#333333]',
+  'sectionStyle': 'translate-y-12 bg-[#8DECB4] rounded-t-[50px] flex items-center justify-center flex-col md:px-0 px-2 mx-4 md:mx-8',
+  'header': 'md:text-[64px]/[80px] text-[32px]/[40px] text-[#141E46] font-[Lexend-Regular] font-semibold',
+  'subHeaderTextSize': 'text-center text-[16px] md:text-[32px] text-[#333333]',
   'textCenter': 'text-center',
   'subHeaderSpacing': 'pb-2 text-center',
   'imageSpacing': 'sm:w-3/4 mt-5',
-  'appStoreWrapper': 'flex items-center justify-center w-full space-x-10',
+  'appStoreWrapper': 'flex items-center justify-center w-full space-x-10 mt-7',
   'appIconWrapper': '',
   'iconSize': 'w-full justify-self-center',
   'bgBox': 'rounded bg-black w-[60%] p-[3.5px] ',
@@ -30,12 +30,12 @@ const SectionOne = (): React.JSX.Element => {
   const { marginX } = useLandingPageContext();
   return (
     <Section parentClassName='bg-white'
-      childClassName={`${marginX} ${styleSheet.sectionStyle} transalateSectionOne`}
+      childClassName={`${marginX} ${styleSheet.sectionStyle}`}
     >
-      <Box className='mb-2'>
+      <Box className='mb-2 mt-24'>
         <Box className={styleSheet.textCenter}>
-          <BoldTextComponent
-            className={styleSheet.header}>Fast and Secure Money</BoldTextComponent></Box>
+          <TextComponent
+            className={styleSheet.header}>Fast and Secure Money</TextComponent></Box>
         <Box className={styleSheet.textCenter}>
           <BoldTextComponent
             className={styleSheet.header}>Transfers Across the Globe</BoldTextComponent>
