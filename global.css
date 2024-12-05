@@ -9,7 +9,7 @@
   @font-face {
     font-family: 'Lexend-ExtraBold';
     src: url('./public/assets/fonts/Lexend-ExtraBold.woff') format('woff'),
-         url('./public/assets/fonts/Lexend-extraBold.ttf') format('truetype');
+         url('./public/assets/fonts/Lexend-ExtraBold.ttf') format('truetype');
     font-weight: 600;
     font-style: normal;
   }
