@@ -95,7 +95,7 @@ const Footer = (): React.JSX.Element => {
           </div>
         </Box>
         <Box className={styleSheet.copyrightSection}>
-          <div className='text-white text-[8px] md:text-[16px]'>copyright &copy; swiftpaay, {currentYear} </div>
+          <div className='text-white text-[8px] md:text-[16px]'>Copyright &copy; Swiftpaay, {currentYear} </div>
         </Box>
       </Box>
 

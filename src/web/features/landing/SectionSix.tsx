@@ -5,6 +5,7 @@ import { useLandingPageContext } from '../../context/LandingPageContext';
 import Box from '../../components/Box';
 import { TextComponent } from '../../components/Text';
 import Accordion from '../../components/Accordion';
+import * as faq from '../../data/faq.json';
 
 interface StyleSheet {
     [key: string]: string
@@ -28,24 +29,7 @@ const styleSheet: StyleSheet = {
 
 const SectionSix = (): React.JSX.Element => {
     const { marginX, h1Size } = useLandingPageContext();
-    const accordionItems = [
-        {
-            title: "Is Swiftpaay a bank?",
-            content: "No, SwiftPaay is not a bank. It is a financial technology platform that facilitates international money transfers. While it provides services like transferring funds to bank accounts and mobile wallets, it does not function as a traditional bank offering savings accounts, loans, or other banking services."
-        },
-        {
-            title: "Why should I use Swiftpaay?",
-            content: "Content for section 2"
-        },
-        {
-            title: "Why should I use Swiftpaay?",
-            content: "Content for section 2"
-        },
-        {
-            title: "Why should I use Swiftpaay?",
-            content: "Content for section 2"
-        }
-    ];
+    const accordionItems = faq.data;
     return (
         <Section parentClassName={styleSheet.sectionBackground}
             childClassName={`${marginX} relative`}

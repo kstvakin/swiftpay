@@ -12,7 +12,7 @@ interface StyleSheet {
 const styleSheet: StyleSheet = {
     'sectionStyle': 'flex items-center justify-center flex-col',
     'contentWrapper': 'mt-[20px] pb-[30px] pt-[60px] flex justify-between items-center',
-    'subHeader': 'text-[0.95rem] text-white',
+    'subHeader': 'text-[10px] md:text-[20px] text-white',
     'iconWrapper': 'flex md:flex-row flex-col justify-between py-12 w-[100%]',
     'iconStyle': 'w-full h-auto',
     'headerText': 'text-white text-center font-[Lexend-ExtraBold]',

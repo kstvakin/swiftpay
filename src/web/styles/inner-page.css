@@ -1,0 +1,38 @@
+/* Main circle container */
+.circle {
+    position: relative;
+    width: 34.22875rem; /* Diameter of the main circle */
+    height: 34.654375rem; /* Diameter of the main circle */
+    background-color: transparent; /* Keep the main element transparent */
+    margin: 3.125rem auto; /* Center the circle */
+  }
+
+  .big-circle {
+    width: 38.22875rem;
+    height: 38.654375rem;
+  }
+
+  .big-circle::before {
+    border-width: 8.25rem !important;
+  }
+  
+  /* Circle border created with ::before */
+  .circle::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Same size as the parent */
+    height: 100%; /* Same size as the parent */
+    border: 6.25rem solid rgba(79, 145, 74, 0.1); /* Wide border in green */
+    border-radius: 50%; /* Makes it a perfect circle */
+    background-color: transparent; /* Keep the center hollow */
+  }
+
+  .circle-2::before{
+    border: 6.25rem solid  rgba(20, 30, 70, 0.1);
+  }
+
+  .circle-3::before{
+    border: 100px solid  rgba(20, 30, 70, 0.1);
+  }
