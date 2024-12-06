@@ -10,10 +10,10 @@ interface LayoutProps {
 
 const styleSheet: AppStyleSheet = {
     'pageContainer': 'relative overflow-x-hidden min-h-[100vh]',
-    'circleOne': 'absolute z-[-1] top-[-20%] left-[-5%]',
-    'circleTwo': 'absolute z-[-1] top-[-15%] right-[0]',
-    'circleThree': 'absolute z-[-1] bottom-[0] left-[-25%]',
-    'circleFour': 'absolute z-[-1] bottom-[0] right-[-5%]',
+    'circleOne': 'absolute z-[-1] top-[-10%] left-0',
+    'circleTwo': 'absolute z-[-1] top-[-10%] right-0',
+    'circleThree': 'absolute z-[-1] bottom-0 left-0',
+    'circleFour': 'absolute z-[-1] bottom-0 lg: right-0',
     'formWrapper': 'h-full w-full flex justify-center my-[6.25rem]',
     'title': 'text-center text-[1.875rem]/[1.3125rem] font-medium font-[Lexend-Regular]',
     'inputStyle': 'focus:outline-none focus:border-input px-2 w-full h-[5.875rem] placeholder:text-[#9ca3af] bg-input border border-input rounded-[0.625rem]',
