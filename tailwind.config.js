@@ -17,8 +17,9 @@ module.exports = {
         'section-five-gradient-3':'rgba(141, 236, 180, 1)',
         'testimonial-gradient-1': '#FFFFFF',
         'testimonial-gradient-2': '#D9E0FF',
-        'input': 'rgba(238, 238, 238, 0.93)',
-        'button': 'rgba(0, 153, 51, 1)'
+        'input': 'rgba(160, 161, 162, 0.05)',
+        'input-border':'rgba(238, 238, 238, 0.93)',
+        'button': '#4F914a'
       },
       backgroundImage:{
         'section-3-bg': 'url("../images/section-three-bg.png")',

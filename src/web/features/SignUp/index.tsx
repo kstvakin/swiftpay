@@ -13,8 +13,8 @@ import { Link } from 'react-router-dom';
 
 
 const styleSheet: AppStyleSheet = {
-    'inputStyle': 'focus:outline-none focus:border-input px-2 w-full h-[5.875rem] placeholder:text-[#9ca3af] bg-input border border-input rounded-[0.625rem]',
-    'selectStyle': 'text-[#9ca3af] custom-select'
+    'inputStyle': 'placeholder:text-[1.5625rem] focus:outline-none focus:border-input px-2 w-full h-[5.875rem] placeholder:text-[#C4C4C4] bg-input border border-input-border rounded-[0.625rem]',
+    'selectStyle': 'text-[#C4C4C4] text-[1.5625rem] custom-select'
 }
 
 const signUpSchema = z.object({
@@ -150,7 +150,7 @@ const SignUpForm = (): React.JSX.Element => {
             <Box className='flex justify-center mt-5'>
                 <Box className='w-[80%]'>
                     <TextComponent className='text-[1.25rem] text-center color-[#ccc]'>
-                        ALready have an account? <Link className='text-button font-extrabold' to='/sign-in'>Login</Link>
+                        Already have an account? <Link className='text-button font-extrabold' to='/sign-in'>Login</Link>
                     </TextComponent>
                 </Box>
             </Box>
