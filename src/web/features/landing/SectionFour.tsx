@@ -41,7 +41,7 @@ const SectionFour = (): React.JSX.Element => {
                                 className={styleSheet.gridItemBg}>
                                 <Box className={styleSheet.gridItem}>
                                     <Box className={styleSheet.gridItemChild}>
-                                        <img src='../../../../assets/images/form.png'
+                                        <img src='../../../../assets/images/form.svg'
                                             className='size-15 w-auto' />
                                     </Box>
                                 </Box>

@@ -30,7 +30,7 @@ const SectionOne = (): React.JSX.Element => {
   const { marginX } = useLandingPageContext();
   return (
     <Section parentClassName='bg-white'
-      childClassName={`${marginX} ${styleSheet.sectionStyle}`}
+      childClassName={`${styleSheet.sectionStyle}`}
     >
       <Box className='mb-2 mt-24'>
         <Box className={styleSheet.textCenter}>

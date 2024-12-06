@@ -3,6 +3,7 @@ import {
   StyleSheet,
 } from 'react-native';
 import Box from '../../components/Box';
+import { Link, NavLink } from 'react-router-dom';
 
 interface StyleSheet {
   [key: string]: string
@@ -68,19 +69,19 @@ const Header = (): React.JSX.Element => {
           <div className={styleSheet.linksContainer}>
             <div className={styleSheet.ulWrapper}>
               <ul className='inline-block'>
-                <li className={styleSheet.links}><a href='#'>Language</a></li>
-                <li className={styleSheet.links}><a href='#'>FAQs</a></li>
-                <li className={styleSheet.links}><a href='#'>About Us</a></li>
-                <li className={styleSheet.links}><a href='#'>Contact Us</a></li>
+                <li className={styleSheet.links}><Link to='#'>Language</Link></li>
+                <li className={styleSheet.links}><Link to='#'>FAQs</Link></li>
+                <li className={styleSheet.links}><Link to='#'>About Us</Link></li>
+                <li className={styleSheet.links}><Link to='#'>Contact Us</Link></li>
               </ul>
             </div>
             <div className='w-[55%]'>
               <ul className='inline-block float-right'>
                 <li className={styleSheet.linksNoPadding}>
-                  <a className={`${styleSheet.roundedLinks} bg-[#141E46]`} href='#'>Log In</a>
+                  <NavLink className={`${styleSheet.roundedLinks} bg-[#141E46]`} to='log-in'>Log In</NavLink>
                 </li>
                 <li className={styleSheet.linksNoPadding}>
-                  <a className={`${styleSheet.roundedLinks} bg-[#41B06E]`} href='#'>Sign Up</a>
+                  <NavLink className={`${styleSheet.roundedLinks} bg-[#41B06E]`} to='/sign-up'>Sign Up</NavLink>
                 </li>
               </ul>
             </div>

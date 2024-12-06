@@ -17,12 +17,15 @@ module.exports = {
         'section-five-gradient-3':'rgba(141, 236, 180, 1)',
         'testimonial-gradient-1': '#FFFFFF',
         'testimonial-gradient-2': '#D9E0FF',
+        'input': 'rgba(238, 238, 238, 0.93)',
+        'button': 'rgba(0, 153, 51, 1)'
       },
       backgroundImage:{
         'section-3-bg': 'url("../images/section-three-bg.png")',
         'section-four-box1': 'url("../images/section-four-box1.png")',
         'section-four-box2':'url("../images/section-four-box2.png")',
         'section-four-box3':'url("../images/section-four-box3.png")',
+        'semi-circle-1':'url("../images/semi-circle-1.png")',
       }
     },
   },
