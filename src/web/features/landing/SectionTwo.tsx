@@ -4,6 +4,8 @@ import { Style, style as tw } from 'twrnc';
 import { useLandingPageContext } from '../../context/LandingPageContext';
 import Box from '../../components/Box';
 import { TextComponent, BoldTextComponent } from '../../components/Text';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee, faStar } from '@fortawesome/free-solid-svg-icons';
 
 interface StyleSheet {
     [key: string]: string
@@ -17,7 +19,7 @@ const styleSheet: StyleSheet = {
     'iconStyle': 'w-full h-auto',
     'headerText': 'text-white text-center font-[Lexend-ExtraBold]',
     'iconSize': 'px-2 mb-5 md:m-0',
-    'starIcon': 'inline-block relative w-[3rem] h-[3rem] bg-[#8DECB4] star',
+    'starIcon': 'inline-block relative text-[#8DECB4] h-[3.75rem] w-[3.75rem]',
 }
 
 const SectionTwo = (): React.JSX.Element => {
@@ -27,11 +29,15 @@ const SectionTwo = (): React.JSX.Element => {
             childClassName={`${marginX} ${styleSheet.sectionStyle}`}
         >
             <Box className={styleSheet.contentWrapper}>
-                <div className={styleSheet.starIcon}></div>
+                <span>
+                    <img src='../../assets/images/Star.svg' />
+                </span>
                 <Box className='px-5'>
                     <BoldTextComponent className={`${h1Size} ${styleSheet.headerText}`}>The SwiftPaay Advantage</BoldTextComponent>
                 </Box>
-                <div className={styleSheet.starIcon}></div>
+                <span>
+                    <img src='../../assets/images/Star.svg' />
+                </span>
             </Box>
             <Box className='text-center'>
                 <Box>
