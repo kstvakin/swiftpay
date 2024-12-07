@@ -13,7 +13,7 @@ interface StyleSheet {
 
 const styleSheet: StyleSheet = {
     'sectionBackground': 'bg-[#FFFFFF] pb-10',
-    'boxContainer': 'size-1/2 h-auto flex-1',
+    'boxContainer': 'size-1/2 h-auto flex-1 shadow-2xl',
     'iconSize': 'size-8',
     'imgStyle': 'w-full h-auto',
     'wrapper': 'flex xs:flex-col flex-row justify-around',

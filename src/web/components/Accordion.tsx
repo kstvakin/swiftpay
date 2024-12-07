@@ -42,7 +42,9 @@ const Accordion: FC<BoxProps> = ({ items }) => {
                             <div
                                 className='float-left'
                                 style={tw('text-[#141E46]')}>{item.title}</div>
-                            <div className="float-right">+</div>
+                            <div className="float-right">
+                                <img src="../../assets/images/angle-down.svg" />
+                            </div>
                         </Box>
                     </Box>
                     {activeIndex === index && (

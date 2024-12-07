@@ -6,10 +6,11 @@ import * as Countries from '../../data/countries.json';
 import * as Languages from '../../data/languages.json';
 import z from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { TextComponent } from '../../components/Text';
 import Box from '../../components/Box';
 import { Link } from 'react-router-dom';
+import { findFlagUrlByNationality } from 'country-flags-svg';
 
 
 const styleSheet: AppStyleSheet = {
@@ -21,96 +22,86 @@ const signUpSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters long"),
     email: z.string().email("Invalid email address"),
     dob: z.date().max(new Date(), "You must be at least 18 years old"),
-    language: z.string().email("Invalid email address"),
-    country: z.number().min(18, "You must be at least 18 years old"),
+    language: z.string().min(1, {
+        message: "Please select a language",
+    }),
+    country: z.string().min(1, {
+        message: "Please select a country",
+    }),
     address: z.string().min(2, "Name must be at least 2 characters long"),
+    phoneNumber: z.string().min(11, "Phone number must be at least 11 characters long"),
 });
 
+export type FormValues = {
+    name: string;
+    email: string;
+    language: string;
+    dob: Date;
+    country: string;
+    address: string;
+    phooneNumber: string;
+    flag: string;
+};
+
 const SignUpForm = (): React.JSX.Element => {
-    const [name, setName] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [dob, setDob] = useState<string>('');
-    const [language, setLanguage] = useState<string>('');
-    const [country, setCountry] = useState<string>('');
-    const [address, setAddress] = useState<string>('');
+    const [userFlag, setUserFlag] = useState('us');
     const countries = Countries.data;
     const languages = Languages.data;
 
-    // useEffect(() => {
-    //     console.log(name)
-    // }, [name])
+    useEffect(() => {
+        console.log(userFlag)
+    }, [userFlag])
 
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm({
+    } = useForm<FormValues>({
         resolver: zodResolver(signUpSchema),
+        defaultValues: {
+            country: 'us',
+            flag: '+1'
+        },
     });
 
-    const onSubmit = (data: Record<string, any>) => {
+    const onSubmit: SubmitHandler<FormValues> = (data: Record<string, any>) => {
         console.log("Form Data:", data);
     };
 
-    const handleChange = (event: {
-        target: {
-            name: string;
-            value: React.SetStateAction<string>;
-        };
-    }) => {
-        switch (event.target.name) {
-            case 'name':
-                setName(event.target.value);
-                break;
-            case 'email':
-                setEmail(event.target.value);
-                break;
-            case 'dob':
-                setDob(event.target.value);
-                break;
-            case 'language':
-                setLanguage(event.target.value);
-                break;
-            case 'country':
-                setCountry(event.target.value);
-                break;
-            case 'address':
-                setAddress(event.target.value);
-                break;
-            default:
-                return;
-        }
-    };
+    const flagUrl = `../../assets/images/country/${userFlag}.svg`;
+
+
 
     return (
 
         <Form onSubmit={handleSubmit(onSubmit)}>
             <FormInput
-                name={name}
+                name='name'
                 placeholder='Full name'
                 className={styleSheet.inputStyle}
                 type='text'
-                register={register} />
+                register={register}
+                error={errors.name?.message} />
 
             <FormInput name='email'
                 placeholder='Email address'
                 className={styleSheet.inputStyle}
                 type='text'
-                value={email}
-                onChange={handleChange} />
+                register={register}
+                error={errors.email?.message} />
 
             <FormInput name='dob'
                 placeholder='Date of Birth'
                 className={styleSheet.inputStyle}
                 type='text'
-                value={dob}
-                onChange={handleChange} />
+                register={register}
+                error={errors.dob?.message} />
 
             <FormSelect name='language'
                 className={`${styleSheet.selectStyle} ${styleSheet.inputStyle}`}
-                value={language}
-                onChange={handleChange}>
-                <option defaultValue="">Language of preference</option>
+                register={register}
+                error={errors.language?.message}>
+                <option value="">Language of preference</option>
                 {languages.map((item) => (
                     <option value={item} key={item}>{item}</option>
                 ))}
@@ -118,24 +109,49 @@ const SignUpForm = (): React.JSX.Element => {
 
             <FormSelect name='country'
                 className={`${styleSheet.selectStyle} ${styleSheet.inputStyle}`}
-                value={country}
-                onChange={handleChange}>
-                <option defaultValue="">Country</option>
+                register={register}
+                error={errors.country?.message}
+                onChange={(e: any) => setUserFlag(e.target.value)}>
+                <option defaultValue="us">Country</option>
                 {countries.map((item) => (
-                    <option value={item} key={item}>{item}</option>
+                    <option value={item.code} key={item.name}>{item.name}</option>
                 ))}
             </FormSelect>
 
+            <Box className='flex'>
+                <Box className='w-[25%] relative'>
+                    <label className='absolute top-[25%] left-4'>
+                        <img src={flagUrl}
+                            className='w-[40px] h-[40px]' /></label>
+                    <FormSelect name='flag'
+                        className={`${styleSheet.selectStyle} ${styleSheet.inputStyle} border-r-0`}
+                        register={register}
+                        error={errors.flag?.message}>
+                        {countries.map((item) => (
+                            <option value={item.dialCode} key={item.dialCode}></option>
+                        ))}
+                    </FormSelect>
+                </Box>
+                <Box className='w-[75%]'>
+                    <FormInput name='phoneNumber'
+                        placeholder='Phone number'
+                        className={`${styleSheet.inputStyle} border-l-0`}
+                        type='text'
+                        register={register}
+                        error={errors.phooneNumber?.message} />
+                </Box>
+            </Box>
+
             <FormTextArea
-                className={`${styleSheet.inputStyle} pt-5 text-[#9ca3af]`}
-                value={address}
-                onChange={handleChange}
+                className={`${styleSheet.inputStyle} pt-5 text-[#9ca3af] h-[150px]`}
+                register={register}
+                error={errors.address?.message}
                 name='address'
                 placeholder='Address'></FormTextArea>
 
             <FormButton title='Continue'
                 className='bg-button color-white py-[0.9375rem] px-[7.8125rem] rounded-full'
-                onClick={() => console.log('hello')}
+
                 type='submit'
             ></FormButton>
 

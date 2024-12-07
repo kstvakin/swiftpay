@@ -19,7 +19,7 @@ const styleSheet: StyleSheet = {
   'textCenter': 'text-center',
   'subHeaderSpacing': 'pb-2 text-center',
   'imageSpacing': 'sm:w-3/4 mt-5',
-  'appStoreWrapper': 'flex items-center justify-center w-full space-x-10 mt-7',
+  'appStoreWrapper': 'flex items-center justify-center w-full space-x-4 sm:space-x-10 mt-7',
   'appIconWrapper': '',
   'iconSize': 'w-full justify-self-center',
   'bgBox': 'rounded bg-black w-[60%] p-[3.5px] ',

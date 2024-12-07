@@ -1,3 +1,6 @@
 {
-    "data": ["Nigeria", "USA"]
+    "data": [
+        {"name": "Nigeria","code": "ng", "dialCode":"+234"},
+        {"name":"USA", "code":"us", "dialCode":"+1"}
+    ]
 }
