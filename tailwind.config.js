@@ -19,7 +19,7 @@ module.exports = {
         'testimonial-gradient-2': '#D9E0FF',
         'input': 'rgba(160, 161, 162, 0.05)',
         'input-border':'rgba(238, 238, 238, 0.93)',
-        'button': '#4F914a'
+        'button': '#82C07F'
       },
       backgroundImage:{
         'section-3-bg': 'url("../images/section-three-bg.png")',
@@ -27,6 +27,7 @@ module.exports = {
         'section-four-box2':'url("../images/section-four-box2.png")',
         'section-four-box3':'url("../images/section-four-box3.png")',
         'semi-circle-1':'url("../images/semi-circle-1.png")',
+        'calender': 'url("../images/calender.png")'
       }
     },
   },
