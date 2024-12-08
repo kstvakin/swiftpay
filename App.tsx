@@ -7,6 +7,7 @@ import { Platform } from 'react-native';
 import SignUpPage from './src/web/pages/SignUp';
 import { store } from './src/web/store/store';
 import { Provider } from 'react-redux';
+import SignInPage from './src/web/pages/SignIn';
 
 const WebRouter = (): React.JSX.Element => {
   return (
@@ -15,6 +16,7 @@ const WebRouter = (): React.JSX.Element => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
+          <Route path="/sign-in" element={<SignInPage />} />
         </Routes>
       </Router>
     </Provider>

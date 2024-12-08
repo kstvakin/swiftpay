@@ -6,6 +6,7 @@ import { TextComponent } from '../../components/Text';
 interface LayoutProps {
     children: ReactNode;
     title?: string;
+    className?: string;
 }
 
 const styleSheet: AppStyleSheet = {
@@ -15,13 +16,13 @@ const styleSheet: AppStyleSheet = {
     'circleThree': 'absolute z-[-1] bottom-0 left-0',
     'circleFour': 'absolute z-[-1] bottom-0 right-0',
     'formWrapper': 'h-full w-full flex justify-center my-[6.25rem]',
-    'title': 'text-center text-[1.875rem]/[1.3125rem] font-medium font-[Lexend-Regular]',
+    'title': 'text-center text-[1.875rem]/[2.625rem] md:text-[1.875rem]/[1.3125rem] font-medium font-[Lexend-Regular]',
     'inputStyle': 'focus:outline-none focus:border-input px-2 w-full h-[5.875rem] placeholder:text-[#9ca3af] bg-input border border-input rounded-[0.625rem]',
     'selectStyle': 'text-[#9ca3af] custom-select',
     'topCircle': 'w-[100px] h-[100px] md:w-[175px] md:h-[175px] lg:w-auto lg:h-auto',
     'bottomCircle': 'w-[150px] h-[100px] md:w-[250px] md:h-[150px] lg:w-auto lg:h-auto'
 }
-const InnerPageLayout: FC<LayoutProps> = ({ children, title }) => {
+const InnerPageLayout: FC<LayoutProps> = ({ children, title, className }) => {
 
 
     return (
@@ -41,7 +42,7 @@ const InnerPageLayout: FC<LayoutProps> = ({ children, title }) => {
                 <img className={styleSheet.bottomCircle} src="../../assets/images/semi-circle-4.png" />
             </div>
 
-            <div className={styleSheet.formWrapper}>
+            <div className={`${styleSheet.formWrapper} ${className}`}>
                 <div className='w-10/12 lg:w-[45%]'>
                     <div className='mb-16'>
                         <TextComponent className={styleSheet.title}>{title}</TextComponent>
