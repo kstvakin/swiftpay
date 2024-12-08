@@ -5,15 +5,19 @@ import LandingPage from './src/web/pages/Landing';
 import { HashRouter as Router, BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Platform } from 'react-native';
 import SignUpPage from './src/web/pages/SignUp';
+import { store } from './src/web/store/store';
+import { Provider } from 'react-redux';
 
 const WebRouter = (): React.JSX.Element => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/sign-up" element={<SignUpPage />} />
-      </Routes>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/sign-up" element={<SignUpPage />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
