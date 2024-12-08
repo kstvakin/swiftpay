@@ -40,6 +40,8 @@ interface ButtonProps {
     className: string;
     title: string;
     type: "button" | "submit" | "reset" | undefined;
+    render?: React.JSX.Element,
+    position?: string
 }
 
 interface DatePickerProps {
@@ -97,13 +99,17 @@ export const FormTextArea: FC<TextAreaProps> = ({ className, name, error, placeh
 };
 
 
-export const FormButton: FC<ButtonProps> = ({ className, title, type }) => {
+export const FormButton: FC<ButtonProps> = ({ className, title, type, render, position }) => {
     return (
         <Box className="mb-5 flex justify-center">
             <button
                 className={className}
                 type={type}
-            >{title}</button>
+            >
+                {position && position === 'left' ? render : null}
+                {title}
+                {position && position === 'right' ? render : null}
+            </button>
         </Box>
     );
 };

@@ -28,12 +28,12 @@ const MobileMenu = forwardRef<HTMLDivElement>((props, ref) => {
   return (
     <div ref={ref} className={styleSheet.mobileMenuWrapper}>
       <ul className={styleSheet.mobileMenuContainer}>
-        <li><a className={styleSheet.mobileMenuLinks} href='#'>Language</a></li>
-        <li><a className={styleSheet.mobileMenuLinks} href='#'>FAQs</a></li>
-        <li><a className={styleSheet.mobileMenuLinks} href='#'>About Us</a></li>
-        <li><a className={styleSheet.mobileMenuLinks} href='#'>Contact Us</a></li>
-        <li><a className={styleSheet.mobileMenuLinks} href='#'>Log In</a></li>
-        <li><a className={styleSheet.mobileMenuLinks} href='#'>Sign Up</a></li>
+        <li><NavLink className={styleSheet.mobileMenuLinks} to='#'>Language</NavLink></li>
+        <li><NavLink className={styleSheet.mobileMenuLinks} to='#'>FAQs</NavLink></li>
+        <li><NavLink className={styleSheet.mobileMenuLinks} to='#'>About Us</NavLink></li>
+        <li><NavLink className={styleSheet.mobileMenuLinks} to='#'>Contact Us</NavLink></li>
+        <li><NavLink className={styleSheet.mobileMenuLinks} to='/sign-in'>Log In</NavLink></li>
+        <li><NavLink className={styleSheet.mobileMenuLinks} to='/sign-up'>Sign Up</NavLink></li>
       </ul>
     </div>
   )
@@ -79,7 +79,7 @@ const Header = (): React.JSX.Element => {
             <div className='w-[55%]'>
               <ul className='inline-block float-right'>
                 <li className={styleSheet.linksNoPadding}>
-                  <NavLink className={`${styleSheet.roundedLinks} bg-[#141E46]`} to='log-in'>Log In</NavLink>
+                  <NavLink className={`${styleSheet.roundedLinks} bg-[#141E46]`} to='/sign-in'>Log In</NavLink>
                 </li>
                 <li className={styleSheet.linksNoPadding}>
                   <NavLink className={`${styleSheet.roundedLinks} bg-[#41B06E]`} to='/sign-up'>Sign Up</NavLink>
