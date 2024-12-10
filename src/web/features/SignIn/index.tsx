@@ -15,17 +15,13 @@ export type FormValues = {
 
 const signInSchema = z.object({
     password: z.string()
-        .min(6, "Characters must be at least six")
-        .refine((val) => val.trim().length > 0, { message: "Please enter your password" })
+        .min(1, "Please enter your password")
     ,
     email: z.string().email("Invalid email address"),
 });
 
 const styleSheet: AppStyleSheet = {
-    'inputStyle': `w-full placeholder:text-[1.2625rem] md:placeholder:text-[1.5625rem] focus:text-[#C4C4C4] 
-        focus:bg-input focus:outline-none focus:border-input px-2 w-full h-[5.875rem] 
-        placeholder:text-[#C4C4C4] !text-[#C4C4C4] text-[1.5625rem] bg-input border
-        border-input-border rounded-[0.625rem]`,
+    'inputStyle': `w-full placeholder:text-[1.2625rem] md:placeholder:text-[1.5625rem] focus:text-[#C4C4C4] focus:bg-input focus:outline-none focus:border-input px-2 w-full h-[5.875rem] placeholder:text-[#C4C4C4] !text-[#C4C4C4] text-[1.5625rem] bg-input border border-input-border rounded-[0.625rem]`,
     'button': 'bg-[#4F914A] color-white py-[0.9375rem] px-[7.8125rem] rounded-full flex items-center',
 }
 
@@ -78,10 +74,15 @@ const SignInForm = (): React.JSX.Element => {
                     type='password'
                     register={register}
                     error={errors.password?.message} />
-                <FormButton title='Login'
-                    className={styleSheet.button}
-                    type='submit'
-                ></FormButton>
+                <Box className='inline-block w-full'>
+                    <Box className='flex justify-center'>
+                        <FormButton title='Login'
+                            className={styleSheet.button}
+                            type='submit'
+                        ></FormButton>
+                    </Box>
+                </Box>
+
             </Form>
             <Box className='my-16 relative'>
                 <div className='text-[1rem] text-center'>
@@ -90,12 +91,16 @@ const SignInForm = (): React.JSX.Element => {
                 <div className='border-[#EEEEEE] border-[1px] w-full absolute top-[50%] mt-[-1px] -z-10'></div>
             </Box>
             <Box>
-                <FormButton title='Continue with Google'
-                    className={`${styleSheet.button} bg-[#F5F7F8] color-[#2C3137] px-[3.90625rem]`}
-                    type='button'
-                    render={<GoogleIcon />}
-                    position='left'
-                ></FormButton>
+                <Box className='inline-block w-full'>
+                    <Box className='flex justify-center'>
+                        <FormButton title='Continue with Google'
+                            className={`${styleSheet.button} bg-[#F5F7F8] !color-[#2C3137] px-[3.90625rem]`}
+                            type='button'
+                            render={<GoogleIcon />}
+                            position='left'
+                        ></FormButton>
+                    </Box>
+                </Box>
             </Box>
         </Box>
     )
