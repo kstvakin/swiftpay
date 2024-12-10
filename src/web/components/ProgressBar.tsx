@@ -5,7 +5,7 @@ import Box from './Box';
 import { RootState } from '../store/store';
 
 interface BarProps {
-    title: string;
+    title?: string;
 }
 
 const ProgressBar: FC<BarProps> = ({ title }): React.JSX.Element => {

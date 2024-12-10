@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 import ProgressBar from '../../components/ProgressBar';
 import { useDispatch } from "react-redux";
 import { AppDispatch, RootState } from '../../store/store';
-import { increment } from './signUpSlice';
+import { increment, setSignUpForm } from './signUpSlice';
 
 
 const styleSheet: AppStyleSheet = {
@@ -86,6 +86,7 @@ const SignUpForm = (): React.JSX.Element => {
     const onSubmit: SubmitHandler<FormValues> = (data: Record<string, any>) => {
         console.log("Form Data:", data);
         dispatch(increment());
+        dispatch(setSignUpForm(data));
     };
 
     const flagUrl = `../../assets/images/country/${userFlag}.svg`;
@@ -170,10 +171,12 @@ const SignUpForm = (): React.JSX.Element => {
                         name='address'
                         placeholder='Address'></FormTextArea>
 
-                    <FormButton title='Continue'
-                        className={styleSheet.button}
-                        type='submit'
-                    ></FormButton>
+                    <Box className='mb-5'>
+                        <FormButton title='Continue'
+                            className={styleSheet.button}
+                            type='submit'
+                        ></FormButton>
+                    </Box>
 
                     <Box className='flex justify-center'>
                         <Box className='w-[80%]'>

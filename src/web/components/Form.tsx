@@ -1,8 +1,13 @@
-import React, { Children, CSSProperties, FC, ReactNode } from "react";
+import React, { FC, ReactNode } from "react";
 import Box from "./Box";
 import { Controller, UseFormRegister } from "react-hook-form";
 import ReactDatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+
+export type FormValues = {
+    password: string;
+    confirmPassword: string;
+};
 
 interface FormProps {
     children: ReactNode;
@@ -16,7 +21,11 @@ interface InputProps {
     value?: string;
     placeholder?: string;
     register: UseFormRegister<any>,
-    error: any
+    error?: string | undefined,
+    maxLength?: number,
+    id?: string,
+    onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void,
+    onChange?: (val: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 interface TextAreaProps {
@@ -41,7 +50,8 @@ interface ButtonProps {
     title: string;
     type: "button" | "submit" | "reset" | undefined;
     render?: React.JSX.Element,
-    position?: string
+    position?: string,
+    disabled?: boolean
 }
 
 interface DatePickerProps {
@@ -53,15 +63,27 @@ interface DatePickerProps {
     maxDate?: Date
 }
 
-export const FormInput: FC<InputProps> = ({ className, name, type, placeholder, error, register, ...rest }) => {
+export const FormInput: FC<InputProps> = ({
+    className, id, name, type,
+    maxLength, placeholder, error,
+    onKeyDown,
+    onChange,
+    register,
+    ...rest
+}) => {
     return (
         <Box className="mb-5">
             <input
+                id={id}
                 autoComplete="off"
                 placeholder={placeholder}
                 className={className}
                 type={type}
-                {...register(name)}
+                maxLength={maxLength}
+                onKeyDown={onKeyDown}
+                {...register(name, {
+                    onChange: onChange
+                })}
                 {...rest} />
             {error && <p className="text-sm text-red-600">{error}</p>}
         </Box>
@@ -99,17 +121,20 @@ export const FormTextArea: FC<TextAreaProps> = ({ className, name, error, placeh
 };
 
 
-export const FormButton: FC<ButtonProps> = ({ className, title, type, render, position }) => {
+export const FormButton: FC<ButtonProps> = ({ className, title, type, render, position, disabled }) => {
     return (
-        <Box className="mb-5 flex justify-center">
-            <button
-                className={className}
-                type={type}
-            >
-                {position && position === 'left' ? render : null}
-                {title}
-                {position && position === 'right' ? render : null}
-            </button>
+        <Box className='inline-block w-full'>
+            <Box className='flex justify-center'>
+                <button
+                    className={className}
+                    type={type}
+                    disabled={disabled}
+                >
+                    {position && position === 'left' ? render : null}
+                    {title}
+                    {position && position === 'right' ? render : null}
+                </button>
+            </Box>
         </Box>
     );
 };
