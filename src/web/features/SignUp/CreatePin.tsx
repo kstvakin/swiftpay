@@ -107,10 +107,11 @@ export const ConfirmPin = (): React.JSX.Element => {
         const value = arrayValues.join('');
         if (pinState !== value) {
             setInCorrectPin(true)
+        } else {
+            dispatch(purgeSignUpForm());
+            navigate('/sign-in');
         }
-        console.log(pinState, value)
-        dispatch(purgeSignUpForm());
-        navigate('/sign-in');
+
     };
 
     return (

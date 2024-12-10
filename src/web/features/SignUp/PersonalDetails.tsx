@@ -84,7 +84,6 @@ const SignUpForm = (): React.JSX.Element => {
     });
 
     const onSubmit: SubmitHandler<FormValues> = (data: Record<string, any>) => {
-        console.log("Form Data:", data);
         dispatch(increment());
         dispatch(setSignUpForm(data));
     };
