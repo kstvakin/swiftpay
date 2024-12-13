@@ -1,0 +1,10 @@
+{
+    "data": [
+        {"name": "Home", "path": "/dashboard" , "icon": "home"},
+        {"name": "Send Money", "path": "/send-money", "icon": "send-money"},
+        {"name": "Transactions", "path": "/transactions", "icon": "transaction"},
+        {"name": "Recipients", "path": "/recipients", "icon": "recipient"},
+        {"name": "Help & Support", "path": "/support", "icon": "help"},
+        {"name": "Settings", "path": "/settings", "icon": "settings"}
+    ]
+}

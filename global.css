@@ -43,3 +43,9 @@
     color: #C4C4C4;
     font-size: 1.5625rem;
   }
+
+  .nav-link.active {
+    background-color: #FFFFFF;
+    color: #141E46;
+    border-left:4px solid #141E46;
+  }

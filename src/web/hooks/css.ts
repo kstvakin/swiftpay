@@ -9,7 +9,10 @@ function useAppStyles() {
             placeholder:text-[#C4C4C4] !text-[#C4C4C4] text-[1.5625rem] bg-input border
             border-input-border rounded-[0.625rem]`,
         'button': 'bg-[#4F914A] color-white py-[0.9375rem] px-[7.8125rem] rounded-full',
-        'innerPageLayoutMargin': 'lg:mb-[20rem] mb-[6.25rem]'
+        'innerPageBg': '',
+        "dashboardHeader":"h-[3.1875] w-full hidden lg:block",
+        "dashIconSize": '3rem h-[30px] w-[30px]',
+        'innerPageLayoutMargin': ''
     }
   return { appStyleSheet };
 }

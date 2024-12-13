@@ -8,16 +8,56 @@ import SignUpPage from './src/web/pages/SignUp';
 import { store } from './src/web/store/store';
 import { Provider } from 'react-redux';
 import SignInPage from './src/web/pages/SignIn';
+import DashboardPage from './src/web/pages/Dashboard';
+import PrivateRoute from './src/web/components/Protected';
+import { AuthProvider } from './src/web/context/AuthContext';
+import TransactionHistoryPage from './src/web/pages/Transactions';
+import SendMoneyPage from './src/web/pages/SendMoney';
+import RecipientsPage from './src/web/pages/Recipients';
+import SupportPage from './src/web/pages/Support';
+import SettingsPage from './src/web/pages/Settings';
 
 const WebRouter = (): React.JSX.Element => {
   return (
     <Provider store={store}>
       <Router>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/sign-up" element={<SignUpPage />} />
-          <Route path="/sign-in" element={<SignInPage />} />
-        </Routes>
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/sign-up" element={<SignUpPage />} />
+            <Route path="/sign-in" element={<SignInPage />} />
+            <Route path='/dashboard' element={
+              <PrivateRoute>
+                <DashboardPage />
+              </PrivateRoute>
+            } />
+            <Route path='/send-money' element={
+              <PrivateRoute>
+                <SendMoneyPage />
+              </PrivateRoute>
+            } />
+            <Route path='/transactions' element={
+              <PrivateRoute>
+                <TransactionHistoryPage />
+              </PrivateRoute>
+            } />
+            <Route path='/recipients' element={
+              <PrivateRoute>
+                <RecipientsPage />
+              </PrivateRoute>
+            } />
+            <Route path='/support' element={
+              <PrivateRoute>
+                <SupportPage />
+              </PrivateRoute>
+            } />
+            <Route path='/settings' element={
+              <PrivateRoute>
+                <SettingsPage />
+              </PrivateRoute>
+            } />
+          </Routes>
+        </AuthProvider>
       </Router>
     </Provider>
   );

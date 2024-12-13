@@ -1,0 +1,44 @@
+{
+    "data":[
+        {
+            "name": "Olusegun Omilabu",
+            "amt": 200000,
+            "accountId": "******1234",
+            "type": "account",
+            "status":"successful",
+            "currency":"NGN"
+        },
+        {
+            "name": "Olusegun Omilabu",
+            "amt": 200000,
+            "accountId": "******1234",
+            "type": "wallet",
+            "status":"failed",
+            "currency":"NGN"
+        },
+        {
+            "name": "Olusegun Omilabu",
+            "amt": 200000,
+            "accountId": "******1234",
+            "type": "account",
+            "status":"successful",
+            "currency":"NGN"
+        },
+        {
+            "name": "Olusegun Omilabu",
+            "amt": 200000,
+            "accountId": "******1234",
+            "type": "wallet",
+            "status":"successful",
+            "currency":"NGN"
+        },
+        {
+            "name": "Olusegun Omilabu",
+            "amt": 200000,
+            "accountId": "******1234",
+            "type": "account",
+            "status":"successful",
+            "currency":"NGN"
+        }
+    ]
+}

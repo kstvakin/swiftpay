@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "Olusegun Omilabu",
+            "accountNumber": "******1234",
+            "institution": "Stanbic IBTC Bank"
+        },
+        {
+            "id": 2,
+            "name": "Nuhu Jahir",
+            "accountNumber": "******1234",
+            "institution": "WEMA Bank"
+        }
+    ]
+}

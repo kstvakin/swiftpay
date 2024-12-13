@@ -6,7 +6,7 @@ import { AppDispatch, RootState } from '../store/store';
 import CreatePasswordForm from '../features/SignUp/CreatePassword';
 import { ConfirmPin, CreatePin } from '../features/SignUp/CreatePin';
 import useAppStyles from '../hooks/css';
-import { decrement, purgeSignUpForm, setLength } from '../features/SignUp/signUpSlice';
+import { setLength } from '../features/SignUp/signUpSlice';
 
 
 

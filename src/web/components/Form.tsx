@@ -25,7 +25,8 @@ interface InputProps {
     maxLength?: number,
     id?: string,
     onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void,
-    onChange?: (val: React.ChangeEvent<HTMLInputElement>) => void
+    onChange?: (val: React.ChangeEvent<HTMLInputElement>) => void,
+    spacing?: string
 }
 
 interface TextAreaProps {
@@ -51,7 +52,8 @@ interface ButtonProps {
     type: "button" | "submit" | "reset" | undefined;
     render?: React.JSX.Element,
     position?: string,
-    disabled?: boolean
+    disabled?: boolean,
+    onClick?: () => void;
 }
 
 interface DatePickerProps {
@@ -66,13 +68,14 @@ interface DatePickerProps {
 export const FormInput: FC<InputProps> = ({
     className, id, name, type,
     maxLength, placeholder, error,
+    spacing,
     onKeyDown,
     onChange,
     register,
     ...rest
 }) => {
     return (
-        <Box className="mb-5">
+        <Box className={spacing}>
             <input
                 id={id}
                 autoComplete="off"
@@ -121,7 +124,7 @@ export const FormTextArea: FC<TextAreaProps> = ({ className, name, error, placeh
 };
 
 
-export const FormButton: FC<ButtonProps> = ({ className, title, type, render, position, disabled }) => {
+export const FormButton: FC<ButtonProps> = ({ className, title, type, render, position, disabled, onClick }) => {
     return (
         <Box className='inline-block w-full'>
             <Box className='flex justify-center'>
@@ -129,6 +132,7 @@ export const FormButton: FC<ButtonProps> = ({ className, title, type, render, po
                     className={className}
                     type={type}
                     disabled={disabled}
+                    onClick={onClick}
                 >
                     {position && position === 'left' ? render : null}
                     {title}
