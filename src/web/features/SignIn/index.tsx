@@ -8,6 +8,7 @@ import { Form, FormButton, FormInput } from '../../components/Form';
 import Box from '../../components/Box';
 import { AppStyleSheet } from '../../utils/inteface';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 
 export type FormValues = {
     email: string;
@@ -35,8 +36,7 @@ const GoogleIcon = (): React.JSX.Element => {
 }
 
 const SignInForm = (): React.JSX.Element => {
-    //const dispatch: AppDispatch = useDispatch();
-    const navigate = useNavigate();
+    const { login } = useAuth();
 
     const {
         register,
@@ -53,8 +53,7 @@ const SignInForm = (): React.JSX.Element => {
 
     const onSubmit: SubmitHandler<FormValues> = (data: Record<string, any>) => {
         console.log("Form Data:", data);
-        navigate('/dashboard');
-        //dispatch(increment());
+        login();
     };
 
     return (
@@ -110,3 +109,7 @@ const SignInForm = (): React.JSX.Element => {
 }
 
 export default SignInForm;
+
+function setIsAuthenticated(arg0: boolean) {
+    throw new Error('Function not implemented.');
+}
