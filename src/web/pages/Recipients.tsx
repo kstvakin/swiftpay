@@ -3,10 +3,9 @@ import useAppStyles from "../hooks/css";
 import DashboardLayout from "../layouts/innerpage/dashboard";
 import Box from "../components/Box";
 import { DashBoardProvider } from "../context/dashboardContext";
-import Navigation from "../features/dashboard/navigation";
-import Activities from "../features/transactions/activities";
 import SearchBar from "../features/recipients/search";
 import List from "../features/recipients/list";
+import Pagination from "../components/pagination";
 
 const RecipientsPage = (): React.JSX.Element => {
     const { appStyleSheet } = useAppStyles();
@@ -16,6 +15,9 @@ const RecipientsPage = (): React.JSX.Element => {
                 <DashBoardProvider>
                     <SearchBar />
                     <List />
+                    <Pagination
+                        url="https://jsonplaceholder.typicode.com/users"
+                    />
                 </DashBoardProvider>
             </Box>
         </DashboardLayout>

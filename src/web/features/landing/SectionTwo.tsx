@@ -1,11 +1,8 @@
 import React from 'react';
 import Section from "../../components/Section";
-import { Style, style as tw } from 'twrnc';
 import { useLandingPageContext } from '../../context/LandingPageContext';
 import Box from '../../components/Box';
 import { TextComponent, BoldTextComponent } from '../../components/Text';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faStar } from '@fortawesome/free-solid-svg-icons';
 
 interface StyleSheet {
     [key: string]: string
@@ -30,13 +27,13 @@ const SectionTwo = (): React.JSX.Element => {
         >
             <Box className={styleSheet.contentWrapper}>
                 <span>
-                    <img src='../../assets/images/Star.svg' />
+                    <img src='/assets/images/Star.svg' />
                 </span>
                 <Box className='px-5'>
                     <BoldTextComponent className={`${h1Size} ${styleSheet.headerText}`}>The SwiftPaay Advantage</BoldTextComponent>
                 </Box>
                 <span>
-                    <img src='../../assets/images/Star.svg' />
+                    <img src='/assets/images/Star.svg' />
                 </span>
             </Box>
             <Box className='text-center'>
@@ -49,17 +46,17 @@ const SectionTwo = (): React.JSX.Element => {
             </Box>
             <Box className={styleSheet.iconWrapper}>
                 <Box className={styleSheet.iconSize}>
-                    <img src='../../assets/images/advantage_one.svg'
+                    <img src='/assets/images/advantage_one.svg'
                         alt='advantages of swiftpaay'
                         className={styleSheet.iconStyle} />
                 </Box>
                 <Box className={styleSheet.iconSize}>
-                    <img src='../../assets/images/advantage_two.svg'
+                    <img src='/assets/images/advantage_two.svg'
                         alt='advantages of swiftpaay'
                         className={styleSheet.iconStyle} />
                 </Box>
                 <Box className={styleSheet.iconSize}>
-                    <img src='../../assets/images/advantage_three.svg'
+                    <img src='/assets/images/advantage_three.svg'
                         alt='advantages of swiftpaay'
                         className={styleSheet.iconStyle} />
                 </Box>

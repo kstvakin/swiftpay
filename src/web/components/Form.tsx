@@ -12,6 +12,7 @@ export type FormValues = {
 interface FormProps {
     children: ReactNode;
     onSubmit: () => void;
+    className?: string;
 }
 
 interface InputProps {
@@ -26,7 +27,9 @@ interface InputProps {
     id?: string,
     onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void,
     onChange?: (val: React.ChangeEvent<HTMLInputElement>) => void,
-    spacing?: string
+    spacing?: string;
+    accept?: string;
+    title?: string
 }
 
 interface TextAreaProps {
@@ -49,7 +52,7 @@ interface SelectProps {
 interface ButtonProps {
     className: string;
     title: string;
-    type: "button" | "submit" | "reset" | undefined;
+    type: "button" | "submit" | "reset";
     render?: React.JSX.Element,
     position?: string,
     disabled?: boolean,
@@ -66,9 +69,16 @@ interface DatePickerProps {
 }
 
 export const FormInput: FC<InputProps> = ({
-    className, id, name, type,
-    maxLength, placeholder, error,
+    className,
+    id,
+    name,
+    type,
+    maxLength,
+    placeholder,
+    error,
     spacing,
+    accept,
+    title,
     onKeyDown,
     onChange,
     register,
@@ -84,11 +94,13 @@ export const FormInput: FC<InputProps> = ({
                 type={type}
                 maxLength={maxLength}
                 onKeyDown={onKeyDown}
+                accept={accept}
+                title={title}
                 {...register(name, {
                     onChange: onChange
                 })}
                 {...rest} />
-            {error && <p className="text-sm text-red-600">{error}</p>}
+            {error && <p className="text-sm text-red-600 px-1">{error}</p>}
         </Box>
     );
 };
@@ -96,7 +108,7 @@ export const FormInput: FC<InputProps> = ({
 export const FormSelect: FC<SelectProps> = ({ className, name, children, error, register, ...rest }) => {
     return (
         <Box>
-            <Box className="mb-5">
+            <Box>
                 <select
                     defaultValue=""
                     className={className}
@@ -112,7 +124,7 @@ export const FormSelect: FC<SelectProps> = ({ className, name, children, error, 
 
 export const FormTextArea: FC<TextAreaProps> = ({ className, name, error, placeholder, register, ...rest }) => {
     return (
-        <Box className="mb-5">
+        <Box>
             <textarea
                 className={className}
                 placeholder={placeholder}
@@ -126,19 +138,17 @@ export const FormTextArea: FC<TextAreaProps> = ({ className, name, error, placeh
 
 export const FormButton: FC<ButtonProps> = ({ className, title, type, render, position, disabled, onClick }) => {
     return (
-        <Box className='inline-block w-full'>
-            <Box className='flex justify-center'>
-                <button
-                    className={className}
-                    type={type}
-                    disabled={disabled}
-                    onClick={onClick}
-                >
-                    {position && position === 'left' ? render : null}
-                    {title}
-                    {position && position === 'right' ? render : null}
-                </button>
-            </Box>
+        <Box className='flex justify-center'>
+            <button
+                className={className}
+                type={type}
+                disabled={disabled}
+                onClick={onClick}
+            >
+                {position && position === 'left' ? render : null}
+                {title}
+                {position && position === 'right' ? render : null}
+            </button>
         </Box>
     );
 };
@@ -172,9 +182,9 @@ export const FormDatePicker: FC<DatePickerProps> = ({ className, maxDate, placeh
         </Box>)
 }
 
-export const Form: FC<FormProps> = ({ children, onSubmit }) => {
+export const Form: FC<FormProps> = ({ children, onSubmit, className }) => {
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmit} className={className}>
             {children}
         </form>
     )

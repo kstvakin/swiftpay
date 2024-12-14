@@ -4,8 +4,6 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import Box from '../../components/Box';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons/faSearch';
-import { TextComponent } from '../../components/Text';
-import * as recipients from "../../data/recipients.json";
 
 export type FormValues = {
     recipient: string;
@@ -24,7 +22,11 @@ const SearchBar = (): React.JSX.Element => {
     return (
         <Box>
             <Box className='border-search-bar border-[1px] border-solid my-10 inline-block w-full'>
-                <span className='float-left w-[5%] px-3 py-5'> <FontAwesomeIcon style={{ color: 'rgba(160, 161, 162, 0.95)' }} icon={faSearch} /></span>
+                <span className='float-left w-[5%] px-3 py-5'>
+                    <FontAwesomeIcon style={{ color: 'rgba(160, 161, 162, 0.95)' }}
+                        icon={faSearch}
+                    />
+                </span>
                 <FormInput
                     className='float-left focus:bg-white focus:outline-none focus:border-0  w-full px-3 py-5  text-[rgba(160, 161, 162, 0.05)] placeholder:text-[rgba(160, 161, 162, 0.05)]'
                     name='recipient'
