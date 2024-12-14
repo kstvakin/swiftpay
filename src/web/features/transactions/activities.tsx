@@ -22,9 +22,9 @@ const Activities = (): React.JSX.Element => {
                             {
                                 item.type && String(item.type).toLowerCase() === "account" ?
                                     (<img className={cssStyle.dashIconSize}
-                                        src='../../assets/images/bank-icon.svg' />) :
+                                        src='/assets/images/bank-icon.svg' />) :
                                     (<img className={cssStyle.dashIconSize}
-                                        src='../../assets/images/wallet-icon.svg' />)
+                                        src='/assets/images/wallet-icon.svg' />)
                             }
                         </Box>
                         <Box>
@@ -43,20 +43,18 @@ const Activities = (): React.JSX.Element => {
                                 {
                                     item.status && String(item.status).toLowerCase() === "successful" &&
                                     <img className={`${cssStyle.dashIconSize} float-right`}
-                                        src='../../assets/images/check.svg' />
+                                        src='/assets/images/check.svg' />
                                 }
                                 {
                                     item.status && String(item.status).toLowerCase() === "failed" &&
                                     <img className={`${cssStyle.dashIconSize} float-right`}
-                                        src='../../assets/images/failed.svg' />
+                                        src='/assets/images/failed.svg' />
                                 }
                                 {
                                     item.status && String(item.status).toLowerCase() === "pending" &&
                                     <img className={`${cssStyle.dashIconSize} float-right`}
-                                        src='../../assets/images/check.svg' />
+                                        src='/assets/images/check.svg' />
                                 }
-
-
                             </Box>
 
                         </Box>

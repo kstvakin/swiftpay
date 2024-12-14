@@ -678,6 +678,14 @@ video {
   z-index: -1;
 }
 
+.z-20 {
+  z-index: 20;
+}
+
+.-z-20 {
+  z-index: -20;
+}
+
 .float-right {
   float: right;
 }
@@ -777,6 +785,10 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-20 {
+  margin-top: 5rem;
+}
+
 .mt-24 {
   margin-top: 6rem;
 }
@@ -855,6 +867,10 @@ video {
   height: 100%;
 }
 
+.\!h-\[9\.375rem\] {
+  height: 9.375rem !important;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -875,12 +891,20 @@ video {
   height: 11.8px;
 }
 
+.h-\[13\.125rem\] {
+  height: 13.125rem;
+}
+
 .h-\[16px\] {
   height: 16px;
 }
 
 .h-\[2\.5rem\] {
   height: 2.5rem;
+}
+
+.h-\[3\.125rem\] {
+  height: 3.125rem;
 }
 
 .h-\[3\.1875\] {
@@ -1084,20 +1108,6 @@ video {
   animation: fadeIn 1s ease-in-out;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
-.animate-fadeOut {
-  animation: fadeOut 1s ease-in-out;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1154,10 +1164,22 @@ video {
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+}
+
 .space-y-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse));
 }
 
 .self-center {
@@ -1176,6 +1198,10 @@ video {
   border-radius: 0.25rem;
 }
 
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
 .rounded-\[0\.625rem\] {
   border-radius: 0.625rem;
 }
@@ -1186,6 +1212,10 @@ video {
 
 .rounded-\[4px\] {
   border-radius: 4px;
+}
+
+.rounded-\[5px\] {
+  border-radius: 5px;
 }
 
 .rounded-full {
@@ -1255,6 +1285,11 @@ video {
   border-color: rgb(238 238 238 / var(--tw-border-opacity, 1));
 }
 
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
+}
+
 .border-input {
   border-color: rgba(160, 161, 162, 0.05);
 }
@@ -1270,6 +1305,11 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
+}
+
+.bg-\[\#009933\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 153 51 / var(--tw-bg-opacity, 1));
 }
 
 .bg-\[\#141E46\] {
@@ -1351,6 +1391,10 @@ video {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
+.bg-rectangle {
+  background-image: url("../images/rectangle.png");
+}
+
 .bg-section-3-bg {
   background-image: url("../images/section-three-bg.png");
 }
@@ -1418,6 +1462,10 @@ video {
   background-size: cover;
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
 .bg-center {
   background-position: center;
 }
@@ -1480,6 +1528,11 @@ video {
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .px-5 {
@@ -1666,6 +1719,11 @@ video {
   font-size: 1.5rem;
 }
 
+.text-\[1\.5rem\]\/\[1\.875rem\] {
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+}
+
 .text-\[1\.875rem\] {
   font-size: 1.875rem;
 }
@@ -1693,6 +1751,11 @@ video {
 
 .text-\[1rem\] {
   font-size: 1rem;
+}
+
+.text-\[1rem\]\/\[1\.21rem\] {
+  font-size: 1rem;
+  line-height: 1.21rem;
 }
 
 .text-\[2\.5rem\] {
@@ -1830,6 +1893,10 @@ video {
   text-decoration-style: solid;
 }
 
+.opacity-\[0\.01\] {
+  opacity: 0.01;
+}
+
 .shadow-2xl {
   --tw-shadow: 0px 12px 38px rgba(0, 0, 0, 0.35) ;
   --tw-shadow-colored: 0px 12px 38px var(--tw-shadow-color);
@@ -1887,6 +1954,14 @@ video {
 
 .placeholder\:text-\[1\.2625rem\]::placeholder {
   font-size: 1.2625rem;
+}
+
+.placeholder\:text-\[1rem\]::-moz-placeholder {
+  font-size: 1rem;
+}
+
+.placeholder\:text-\[1rem\]::placeholder {
+  font-size: 1rem;
 }
 
 .placeholder\:text-\[\#9ca3af\]::-moz-placeholder {
@@ -2106,6 +2181,14 @@ video {
 
   .md\:placeholder\:text-\[1\.5625rem\]::placeholder {
     font-size: 1.5625rem;
+  }
+
+  .md\:placeholder\:text-\[1rem\]::-moz-placeholder {
+    font-size: 1rem;
+  }
+
+  .md\:placeholder\:text-\[1rem\]::placeholder {
+    font-size: 1rem;
   }
 }
 

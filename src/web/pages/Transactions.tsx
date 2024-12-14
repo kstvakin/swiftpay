@@ -5,6 +5,8 @@ import Box from "../components/Box";
 import { DashBoardProvider } from "../context/dashboardContext";
 import Navigation from "../features/dashboard/navigation";
 import Activities from "../features/transactions/activities";
+import SearchBar from "../features/transactions/search";
+import Pagination from "../components/pagination";
 
 const TransactionHistoryPage = (): React.JSX.Element => {
     const { appStyleSheet } = useAppStyles();
@@ -12,8 +14,11 @@ const TransactionHistoryPage = (): React.JSX.Element => {
         <DashboardLayout title="Transactions" renderIcon={true}>
             <Box className="w-3/4 m-auto px-3">
                 <DashBoardProvider>
+                    <SearchBar />
                     <Activities />
-                    {/* <Navigation /> */}
+                    <Pagination
+                        url="https://jsonplaceholder.typicode.com/users"
+                    />
                 </DashBoardProvider>
             </Box>
         </DashboardLayout>

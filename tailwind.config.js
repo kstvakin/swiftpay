@@ -36,7 +36,8 @@ module.exports = {
         'semi-circle-1':'url("../images/semi-circle-1.png")',
         'calender':'url("../images/calender.png")',
         'custom-border':'url("../images/custom-border.png")',
-        'circles':'url("../images/circles.png")'
+        'circles':'url("../images/circles.png")',
+        'rectangle': 'url("../images/rectangle.png")'
       },
       dropShadow: {
         'sidebar-boxshadow': '0 0 20px rgba(0, 0, 0, 0.1)',
