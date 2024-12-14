@@ -1,13 +1,10 @@
 import React from 'react';
-import { AppDispatch } from '../../store/store';
-import { useDispatch } from 'react-redux';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import z from 'zod';
 import { Form, FormButton, FormInput } from '../../components/Form';
 import Box from '../../components/Box';
 import { AppStyleSheet } from '../../utils/inteface';
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 export type FormValues = {
@@ -41,7 +38,6 @@ const SignInForm = (): React.JSX.Element => {
     const {
         register,
         handleSubmit,
-        control,
         formState: { errors },
     } = useForm<FormValues>({
         resolver: zodResolver(signInSchema),
@@ -109,7 +105,3 @@ const SignInForm = (): React.JSX.Element => {
 }
 
 export default SignInForm;
-
-function setIsAuthenticated(arg0: boolean) {
-    throw new Error('Function not implemented.');
-}
