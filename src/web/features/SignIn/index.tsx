@@ -34,6 +34,7 @@ const GoogleIcon = (): React.JSX.Element => {
 
 const SignInForm = (): React.JSX.Element => {
     const { login } = useAuth();
+    const { login } = useAuth();
 
     const {
         register,
@@ -49,6 +50,7 @@ const SignInForm = (): React.JSX.Element => {
 
     const onSubmit: SubmitHandler<FormValues> = (data: Record<string, any>) => {
         console.log("Form Data:", data);
+        login();
         login();
     };
 
