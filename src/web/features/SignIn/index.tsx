@@ -6,6 +6,7 @@ import { Form, FormButton, FormInput } from '../../components/Form';
 import Box from '../../components/Box';
 import { AppStyleSheet } from '../../utils/inteface';
 import { useAuth } from '../../context/AuthContext';
+import useLocalStorage from '../../hooks/localstorage-manager';
 
 export type FormValues = {
     email: string;
@@ -34,6 +35,7 @@ const GoogleIcon = (): React.JSX.Element => {
 
 const SignInForm = (): React.JSX.Element => {
     const { login } = useAuth();
+    const { storeValueAsync } = useLocalStorage('userData', {})
 
     const {
         register,
@@ -47,9 +49,11 @@ const SignInForm = (): React.JSX.Element => {
     });
 
 
-    const onSubmit: SubmitHandler<FormValues> = (data: Record<string, any>) => {
+    const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
         console.log("Form Data:", data);
-        login();
+        storeValueAsync(data)
+            .then(() => login())
+            .catch(err => console.log(err))
     };
 
     return (

@@ -1,5 +1,6 @@
 import React, { createContext, PropsWithChildren, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useLocalStorage from '../hooks/localstorage-manager';
 
 
 type AuthProps = PropsWithChildren<{}>;
@@ -19,7 +20,8 @@ const AuthContext = createContext<ContextType>({
 });
 
 export const AuthProvider = ({ children }: AuthProps) => {
-    const [isAuthenticated, setIsAuthenticated] = useState(true);
+    const { storedValue, removeValueAsync } = useLocalStorage('userData', {});
+    const [isAuthenticated, setIsAuthenticated] = useState(Object.keys(storedValue).length > 0 ? true : false);
     const navigate = useNavigate();
 
     const login = () => {
@@ -28,8 +30,10 @@ export const AuthProvider = ({ children }: AuthProps) => {
     };
 
     const logout = () => {
-        setIsAuthenticated(false);
-        navigate('/signin'); // Redirect after logout
+        removeValueAsync()
+            .then(() => setIsAuthenticated(false))
+            .then(() => navigate('/sign-in'))
+            .catch(err => console.log(err))
     };
 
     return (
