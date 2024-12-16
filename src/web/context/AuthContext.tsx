@@ -1,17 +1,18 @@
 import React, { createContext, PropsWithChildren, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from '../hooks/localstorage-manager';
+import { SignFormValues } from '../features/SignIn';
 
 
 type AuthProps = PropsWithChildren<{}>;
 interface ContextType {
     isAuthenticated: boolean;
-    login: () => void;
+    login: (data: SignFormValues) => void;
     logout: () => void;
 }
 const AuthContext = createContext<ContextType>({
     isAuthenticated: false,
-    login: function (): void {
+    login: function (data: SignFormValues): void {
         throw new Error('Function not implemented.');
     },
     logout: function (): void {
@@ -20,20 +21,20 @@ const AuthContext = createContext<ContextType>({
 });
 
 export const AuthProvider = ({ children }: AuthProps) => {
-    const { storedValue, removeValueAsync } = useLocalStorage('userData', {});
+    const { storedValue, removeValue, storeValue } = useLocalStorage('userData', {});
     const [isAuthenticated, setIsAuthenticated] = useState(Object.keys(storedValue).length > 0 ? true : false);
     const navigate = useNavigate();
 
-    const login = () => {
+    const login = (data: SignFormValues) => {
+        storeValue(data);
         setIsAuthenticated(true);
-        navigate('/dashboard'); // Redirect after login
+        navigate('/dashboard');
     };
 
     const logout = () => {
-        removeValueAsync()
-            .then(() => setIsAuthenticated(false))
-            .then(() => navigate('/sign-in'))
-            .catch(err => console.log(err))
+        removeValue();
+        setIsAuthenticated(false);
+        navigate('/sign-in');
     };
 
     return (

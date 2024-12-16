@@ -8,7 +8,7 @@ import { AppStyleSheet } from '../../utils/inteface';
 import { useAuth } from '../../context/AuthContext';
 import useLocalStorage from '../../hooks/localstorage-manager';
 
-export type FormValues = {
+export type SignFormValues = {
     email: string;
     password: string;
 };
@@ -35,13 +35,12 @@ const GoogleIcon = (): React.JSX.Element => {
 
 const SignInForm = (): React.JSX.Element => {
     const { login } = useAuth();
-    const { storeValueAsync } = useLocalStorage('userData', {})
 
     const {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm<FormValues>({
+    } = useForm<SignFormValues>({
         resolver: zodResolver(signInSchema),
         defaultValues: {
             password: ''
@@ -49,11 +48,8 @@ const SignInForm = (): React.JSX.Element => {
     });
 
 
-    const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
-        console.log("Form Data:", data);
-        storeValueAsync(data)
-            .then(() => login())
-            .catch(err => console.log(err))
+    const onSubmit: SubmitHandler<SignFormValues> = (data: SignFormValues) => {
+        login(data)
     };
 
     return (

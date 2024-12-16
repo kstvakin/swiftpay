@@ -5,14 +5,12 @@ import PersonalDetailsForm from '../features/SignUp/PersonalDetails';
 import { AppDispatch, RootState } from '../store/store';
 import CreatePasswordForm from '../features/SignUp/CreatePassword';
 import { ConfirmPin, CreatePin } from '../features/SignUp/CreatePin';
-import useAppStyles from '../hooks/css';
 import { setLength } from '../features/SignUp/signUpSlice';
 
 
 
 const SignUpPage = (): React.JSX.Element => {
     const count = useSelector((state: RootState) => state.signup.length);
-    const { appStyleSheet } = useAppStyles();
     const dispatch: AppDispatch = useDispatch();
 
     useEffect(() => {
@@ -25,22 +23,19 @@ const SignUpPage = (): React.JSX.Element => {
         switch (count) {
             case 50:
                 return (
-                    <InnerPageLayout title="Create Password"
-                        className={appStyleSheet.innerPageLayoutMargin}>
+                    <InnerPageLayout title="Create Password">
                         <CreatePasswordForm />
                     </InnerPageLayout>
                 );
             case 75:
                 return (
-                    <InnerPageLayout title="Create Pin"
-                        className={appStyleSheet.innerPageLayoutMargin}>
+                    <InnerPageLayout title="Create Pin">
                         <CreatePin />
                     </InnerPageLayout>
                 );
             case 100:
                 return (
-                    <InnerPageLayout title="Confirm Pin"
-                        className={appStyleSheet.innerPageLayoutMargin}>
+                    <InnerPageLayout title="Confirm Pin">
                         <ConfirmPin />
                     </InnerPageLayout>
                 );

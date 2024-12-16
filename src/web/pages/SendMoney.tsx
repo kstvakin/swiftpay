@@ -1,23 +1,19 @@
 import React from "react";
-import useAppStyles from "../hooks/css";
 import DashboardLayout from "../layouts/innerpage/dashboard";
 import Box from "../components/Box";
-import { DashBoardProvider } from "../context/dashboardContext";
-import Navigation from "../features/dashboard/navigation";
+import { DashBoardProvider, useDashBoardCss } from "../context/dashboardContext";
 import Activities from "../features/transactions/activities";
 
 const SendMoneyPage = (): React.JSX.Element => {
-    const { appStyleSheet } = useAppStyles();
+    const { cssStyle } = useDashBoardCss();
     return (
-        <DashboardLayout title="Send Money" renderIcon={true}>
-            <Box className="w-3/4 m-auto px-3">
-                <DashBoardProvider>
+        <DashBoardProvider>
+            <DashboardLayout title="Send Money" renderIcon={true}>
+                <Box className={cssStyle.mainSection}>
                     <div>send money</div>
-                    {/* <Activities /> */}
-                    {/* <Navigation /> */}
-                </DashBoardProvider>
-            </Box>
-        </DashboardLayout>
+                </Box>
+            </DashboardLayout>
+        </DashBoardProvider>
     );
 };
 
