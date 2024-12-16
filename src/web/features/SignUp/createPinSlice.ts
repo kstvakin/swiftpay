@@ -1,11 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface FormState {
-  pinState: string
+  pinState: string;
+  pinCreationScreen: number;
 }
 
 const initialState: FormState = {
-  pinState: '' 
+  pinState: '',
+  pinCreationScreen: 1
 };
 
 const createPinSlice = createSlice({
@@ -14,10 +16,13 @@ const createPinSlice = createSlice({
   reducers: {
     setUserPin: (state: FormState, action: PayloadAction<string>) => {
       state.pinState = action.payload;
+    },
+    changePinScreen: (state: FormState, action: PayloadAction<number>) => {
+      state.pinCreationScreen = action.payload;
     }
   },
 });
 
-export const { setUserPin } = createPinSlice.actions;
+export const { setUserPin, changePinScreen } = createPinSlice.actions;
 
 export default createPinSlice.reducer;

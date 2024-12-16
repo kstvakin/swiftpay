@@ -1,7 +1,6 @@
 import React from 'react';
 import { TextComponent } from '../../components/Text';
 import Box from '../../components/Box';
-import useAppStyles from '../../hooks/css';
 import { AppStyleSheet } from '../../utils/inteface';
 
 const styleSheet: AppStyleSheet = {
@@ -11,8 +10,6 @@ const styleSheet: AppStyleSheet = {
 };
 
 const Rate = (): React.JSX.Element => {
-
-    const { appStyleSheet } = useAppStyles();
 
     return (
         <Box className={styleSheet.container}>

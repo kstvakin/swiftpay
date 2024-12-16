@@ -1,7 +1,7 @@
 import React, { FC } from "react";
-import useAppStyles from "../../../hooks/css";
 import Box from "../../../components/Box";
 import { useNavigate } from "react-router-dom";
+import { useDashBoardCss } from "../../../context/dashboardContext";
 
 interface ComponentProps {
     title?: string;
@@ -9,17 +9,27 @@ interface ComponentProps {
 }
 
 const Header: FC<ComponentProps> = ({ title, renderIcon }) => {
-    const { appStyleSheet } = useAppStyles();
+    const { cssStyle } = useDashBoardCss();
     const navigate = useNavigate();
+    const handleGoBack = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navigate(-1);
+    }
 
     return (
-        <Box className={appStyleSheet.dashboardHeader}>
+        <Box className={cssStyle.dashboardHeader}>
             <div className="py-1 flex items-center justify-between">
-                <div className="flex items-center space-x-20">
-                    <span onClick={() => navigate('/dashboard')} className="px-5">{renderIcon && <img src="../../assets/images/arrow-back.svg" />}</span>
+                {renderIcon && (
+                    <div className="flex items-center">
+                        <span onClick={handleGoBack} className="px-5 cursor-pointer">
+                            <img src="../../assets/images/arrow-back.svg" />
+                        </span>
+                    </div>
+                )}
+                <div>
                     <span className="text-[2.5rem] collor-[rgba(0, 0, 0, 1)] font-bold">{title}</span>
                 </div>
-                <div className="">
+                <div>
                     <div className="flex items-center space-x-5">
                         <div className="float-left">
                             <img className="h-[1.5rem]" src="../../../assets/images/bell-icon.svg" />

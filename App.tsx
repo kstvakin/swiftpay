@@ -16,6 +16,8 @@ import SendMoneyPage from './src/web/pages/SendMoney';
 import RecipientsPage from './src/web/pages/Recipients';
 import SupportPage from './src/web/pages/Support';
 import SettingsPage from './src/web/pages/Settings';
+import SetLimitPage from './src/web/pages/SetLimit';
+import ChangePinPage from './src/web/pages/ChangePin';
 
 const WebRouter = (): React.JSX.Element => {
   return (
@@ -54,6 +56,16 @@ const WebRouter = (): React.JSX.Element => {
             <Route path='/settings' element={
               <PrivateRoute>
                 <SettingsPage />
+              </PrivateRoute>
+            } />
+            <Route path='/set-limit' element={
+              <PrivateRoute>
+                <SetLimitPage />
+              </PrivateRoute>
+            } />
+            <Route path='/change-pin' element={
+              <PrivateRoute>
+                <ChangePinPage />
               </PrivateRoute>
             } />
           </Routes>

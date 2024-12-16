@@ -26,7 +26,8 @@ module.exports = {
         'faded-two': 'rgba(119, 119, 119, 0.2)',
         'search-bar': 'rgba(238, 238, 238, 0.93)',
         'send-black': 'rgba(0, 54, 0, 1)',
-        'edit-green': 'rgba(78, 144, 74, 1)'
+        'edit-green': 'rgba(78, 144, 74, 1)',
+        'settings-bg': 'rgba(160, 161, 162, 0.05)'
       },
       backgroundImage:{
         'section-3-bg': 'url("../images/section-three-bg.png")',

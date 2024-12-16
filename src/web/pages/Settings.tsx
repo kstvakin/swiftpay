@@ -1,20 +1,20 @@
 import React from "react";
-import useAppStyles from "../hooks/css";
 import DashboardLayout from "../layouts/innerpage/dashboard";
 import Box from "../components/Box";
-import { DashBoardProvider } from "../context/dashboardContext";
-import Navigation from "../features/dashboard/navigation";
-import Activities from "../features/transactions/activities";
+import { DashBoardProvider, useDashBoardCss } from "../context/dashboardContext";
+import SetLimit from "../features/settings/SetLimit";
+import ChangePin from "../features/settings/ChangePin";
+import General from "../features/settings/General";
 
 const SettingsPage = (): React.JSX.Element => {
-    const { appStyleSheet } = useAppStyles();
+    const { cssStyle } = useDashBoardCss();
     return (
         <DashboardLayout title="Settings" renderIcon={true}>
-            <Box className="w-3/4 m-auto px-3">
+            <Box className={cssStyle.mainSection}>
                 <DashBoardProvider>
-                    <div>send money</div>
-                    {/* <Activities /> */}
-                    {/* <Navigation /> */}
+                    <SetLimit />
+                    <ChangePin />
+                    <General />
                 </DashBoardProvider>
             </Box>
         </DashboardLayout>
